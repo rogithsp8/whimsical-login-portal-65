@@ -1,9 +1,10 @@
 
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Layers, User, Palette, Globe } from "lucide-react";
 
-const Index = () => {
+const Index: React.FC = () => {
   const navigate = useNavigate();
 
   return (

@@ -2,10 +2,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import PortfolioEditor from '@/components/portfolio/PortfolioEditor';
-import { LogOut, User } from 'lucide-react';
+import CanvaStylePortfolioEditor from '@/components/portfolio/CanvaStylePortfolioEditor';
+import { LogOut, User, Eye, Download } from 'lucide-react';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   
   return (
@@ -14,7 +14,15 @@ const Dashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <h1 className="text-xl font-bold text-gray-900">Portfolio Builder</h1>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-4">
+              <Button variant="outline" size="sm" className="flex items-center gap-2">
+                <Eye size={16} />
+                <span>Preview</span>
+              </Button>
+              <Button variant="outline" size="sm" className="flex items-center gap-2">
+                <Download size={16} />
+                <span>Export</span>
+              </Button>
               <Button variant="ghost" size="sm" className="flex items-center gap-2">
                 <User size={16} />
                 <span>Profile</span>
@@ -34,7 +42,7 @@ const Dashboard = () => {
       </header>
       
       <main className="py-10">
-        <PortfolioEditor />
+        <CanvaStylePortfolioEditor />
       </main>
       
       <footer className="bg-white border-t border-gray-200 py-6">
